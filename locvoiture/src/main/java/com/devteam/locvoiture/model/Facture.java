@@ -30,6 +30,6 @@ public class Facture {
 	public void setNumFacture(String numFacture) {
 		this.numFacture = numFacture;
 	}
-	 
+	  
 
 }
