@@ -27,7 +27,7 @@ public class Vehicule {
 	}
 	public int getIdVehicule() {  
 		return idVehicule;
-	} 
+	}  
 	public void setIdVehicule(int idVehicule) {
 		this.idVehicule = idVehicule;
 	}

@@ -16,7 +16,7 @@ public class Client extends Utilisateur{
 		this.numPermis = numPermis;
 	}
 	
-   
+    
 	
 	
 
