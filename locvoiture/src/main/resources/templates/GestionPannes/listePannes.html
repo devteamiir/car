@@ -18,15 +18,16 @@
 <div class="container">
 
 	<h2 class="bg-primary text-white">Pannes</h2>
-<a th:href="@{/ajoutCategorie}" >Ajouter Panne</a>
+<a th:href="@{/ajoutPanne}" >Ajouter Panne</a>
 	<table border="1" class="table">
 		<tr>
 			<th>Id</th>
 			<th>type Panne</th>
 			<th>datePanne</th>
 			<th>montant</th>
-			<th>Action</th>
 			<th>description</th>
+			<th>Action</th>
+			
 			
 		</tr>
 
@@ -34,8 +35,10 @@
 			<th th:text="${r.idPanne}"></th>
 			<th th:text="${r.typePanne}"></th>
 			<th th:text="${r.datePanne}"></th>
+			
 			<th th:text="${r.montant}"></th>
-			<th  ><a th:href="@{/suppressionPanne?n={n}(n=$${r.idPanne})}" >Supprimer</a>
+			<th th:text="${r.description}"></th>
+			<th  ><a th:href="@{/suppressionPanne?n={n}(n=${r.idPanne})}" >Supprimer</a>
 			 <a th:href="@{/modificationPanne?n={n}(n=${r.idPanne})}" >modifier</a></th>
 		</tr>
 

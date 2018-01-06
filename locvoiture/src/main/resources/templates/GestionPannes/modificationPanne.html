@@ -20,21 +20,27 @@
 	<div class="container">
 
 		<h2 class="bg-primary text-white">Modification</h2>
-		<form action="modificationCategorie" method="post">
+		<form action="modificationPanne" method="post">
 			<div class="form-group">
 			<div>
-					<label for="idCategorie">id:</label><input type="text" name="idCategorie"
-						class="form-control" th:value="${categorie.idCategorie}"></input>
+<!-- 					<label for="idPanne">id:</label><input type="text" name="idPanne" -->
+<!-- 						class="form-control" th:value="${panne.idPanne}"></input> -->
 				</div>
 				
 				<div>
-					<label for="nom">nom:</label><input type="text" name="nom"
-						class="form-control" th:value="${categorie.nom}"></input>
+					<label for="datePanne">Date panne:</label><input type="date" name="dateP"
+						class="form-control" th:value="${#dates.format(panne.datePanne,'YYYY-MM-dd')}"></input>
 				</div>
 				<div>
-					<label for="salaire">salaire:</label><input type="text" name="salaire"
-						class="form-control" th:value="${categorie.salaire}"></input>
+					<label for="montant">Montant:</label><input type="number" name="montant"
+						class="form-control" th:value="${panne.montant}"></input>
 				</div>
+				<div>
+					<label for="description">Description:</label><input type="text" name="description"
+						class="form-control" th:value="${panne.description}"></input>
+				</div>
+				
+				
 				<div>
 					<input type="submit" name="enregistrer" class="btn btn-default"></input>
 				</div>

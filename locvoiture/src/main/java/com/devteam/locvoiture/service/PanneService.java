@@ -9,7 +9,7 @@ public interface PanneService {
 	
 	void ajouterPanne(Panne r);
 	List<Panne> getPannes();
-	Panne getPanneById(long id);
+	Panne getUnePanneById(int id);
 	void delete(Panne r);
 	void modifier(Panne r);
 

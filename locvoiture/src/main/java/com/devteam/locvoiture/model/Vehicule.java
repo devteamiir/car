@@ -1,9 +1,10 @@
 package com.devteam.locvoiture.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+@Entity
 public class Vehicule {
 	@Id
 	@GeneratedValue
@@ -24,9 +25,9 @@ public class Vehicule {
 	public void setTypeVehicule(TypeVehicule typeVehicule) {
 		this.typeVehicule = typeVehicule;
 	}
-	public int getIdVehicule() {
+	public int getIdVehicule() {  
 		return idVehicule;
-	}
+	}  
 	public void setIdVehicule(int idVehicule) {
 		this.idVehicule = idVehicule;
 	}

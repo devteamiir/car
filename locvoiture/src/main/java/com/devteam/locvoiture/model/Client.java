@@ -1,7 +1,8 @@
 package com.devteam.locvoiture.model;
 
+import javax.persistence.Entity;
 
-
+@Entity
 public class Client extends Utilisateur{
 	
 	private String numPermis;
@@ -15,7 +16,7 @@ public class Client extends Utilisateur{
 		this.numPermis = numPermis;
 	}
 	
-
+    
 	
 	
 

@@ -2,13 +2,15 @@ package com.devteam.locvoiture.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+@Entity
 public class Panne {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idPanne;
 	private String typePanne;
 	private Date datePanne;
@@ -27,7 +29,7 @@ public class Panne {
 	}
 	public void setIdPanne(int idPanne) {
 		this.idPanne = idPanne;
-	}
+	}    
 	public String getTypePanne() {
 		return typePanne;
 	}
@@ -51,6 +53,11 @@ public class Panne {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	@Override
+	public String toString() {
+		return "Panne [idPanne=" + idPanne + ", typePanne=" + typePanne + ", datePanne=" + datePanne + ", montant="
+				+ montant + ", description=" + description + ", vehicule=" + vehicule + "]";
 	}
 	
 

@@ -9,7 +9,7 @@ import com.devteam.locvoiture.model.Panne;
 import com.devteam.locvoiture.repository.PanneRepository;
 
 
-@Service("ressourceService")
+@Service("panneService")
 public class PanneServiceImpl implements PanneService {
 	
 	@Autowired
@@ -36,11 +36,7 @@ public class PanneServiceImpl implements PanneService {
 		return panneRepository.findAll();
 	}
 	
-	@Override
-	public Panne getPanneById(long id) {
-		
-		return panneRepository.findOne(id);
-	}
+	
 	
 	@Override
 	public  void delete(Panne r) {
@@ -49,6 +45,15 @@ public class PanneServiceImpl implements PanneService {
 		 
 		 
 	}
+
+
+	@Override
+	public Panne getUnePanneById(int id) {
+		return panneRepository.findOne(id);
+	}
+
+
+	
 	
 	
 	

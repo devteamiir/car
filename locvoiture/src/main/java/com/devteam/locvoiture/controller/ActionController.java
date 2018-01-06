@@ -1,6 +1,11 @@
 package com.devteam.locvoiture.controller;
 
+import java.util.Date;
+
+import javax.sound.midi.Soundbank;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,17 +34,18 @@ public class ActionController {
 
 	public String ajouter() {
 
-		return "gestionPannes/ajout";
+		return "gestionPannes/ajoutPanne";
 	}
 
 	// Enregistrement
 	@RequestMapping(value = "/ajoutPanne", method = RequestMethod.POST)
 
-	public String ajouter(@ModelAttribute Panne r, BindingResult result) {
-
+	public String ajouter(@ModelAttribute Panne r, BindingResult result,
+			@RequestParam("dateP") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date datePanne) {
+			r.setDatePanne(datePanne);
 		if (result.hasErrors()) {
 			System.out.println("erreur:::::: "+result.toString());
-			return "gestionPannes/ajout";
+			return "gestionPannes/ajoutPanne";
 		}else {
 			panneService.ajouterPanne(r);
 
@@ -66,7 +72,7 @@ public class ActionController {
 	@RequestMapping(value = "/suppressionPanne", method = RequestMethod.GET)
 	public String supprimer(@RequestParam String n) {
 		
-		Panne r= panneService.getPanneById(Integer.parseInt(n));
+		Panne r= panneService.getUnePanneById(Integer.parseInt(n));
 		
 		
 		
@@ -80,14 +86,17 @@ public class ActionController {
 	
 	//modification formulaire
 	
-	@RequestMapping(value = "/modificationPannes", method = RequestMethod.GET)
+	@RequestMapping(value = "/modificationPanne", method = RequestMethod.GET)
 
 	public String modifier(Model m, @RequestParam String n ) {
-		Panne r= panneService.getPanneById(Long.parseLong(n));
+		int id= Integer.parseInt(n);
+		System.out.println(id);
+		Panne r= panneService.getUnePanneById(id);
+		System.out.println(r.toString());
 		m.addAttribute("panne", r);
 		
 		
-		return "gestionPannes/listePannes";
+		return "gestionPannes/modificationPanne";
 	}
 	
 	
@@ -95,11 +104,12 @@ public class ActionController {
 	
 	@RequestMapping(value = "/modificationPanne", method = RequestMethod.POST)
 
-	public String modifier(@ModelAttribute Panne r, BindingResult result) {
-
+	public String modifier(@ModelAttribute Panne r, BindingResult result,
+			@RequestParam("dateP") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date datePanne) {
+		r.setDatePanne(datePanne);
 		if (result.hasErrors()) {
 			System.out.println("erreur:::::: "+result.toString());
-			return "gestionPannes/ajout";
+			return "gestionPannes/ajoutPanne";
 		}else {
 			panneService.ajouterPanne(r);
 

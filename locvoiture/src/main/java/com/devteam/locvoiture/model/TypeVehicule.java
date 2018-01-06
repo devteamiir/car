@@ -1,7 +1,13 @@
 package com.devteam.locvoiture.model;
 
-public class TypeVehicule {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class TypeVehicule {
+	@Id
+	@GeneratedValue
 	private int idTypeVehicule;
 	private String categorie;
 	private int nbrPlace;
@@ -19,7 +25,7 @@ public class TypeVehicule {
 		this.categorie = categorie;
 	}
 	public int getNbrPlace() {
-		return nbrPlace;
+		return nbrPlace;    
 	}
 	public void setNbrPlace(int nbrPlace) {
 		this.nbrPlace = nbrPlace;
