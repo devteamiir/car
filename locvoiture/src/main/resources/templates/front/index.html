@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from pixarwpthemes.net/templates/hata/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 10:09:38 GMT -->
+<head>
+
+<title>LocVoiture - Page d'acceuil</title>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<script src="style/js/pace.js"></script>
+
+<link rel="stylesheet" href="style/css/bootstrap.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="style/css/flexslider.css" type="text/css" />
+<link rel="stylesheet" href="style/css/jquery.selectBox.css"
+	type="text/css" />
+<link rel="stylesheet" href="style/css/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="style/css/font-awesome.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="style/css/green.css" type="text/css" />
+<link rel="stylesheet" href="style/css/style.css" type="text/css" />
+<link rel="stylesheet" href="style/css/responsive.css" type="text/css" />
+<link rel="stylesheet" href="style/css/pace-minimal.css" />
+
+<link
+	href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'
+	rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,500'
+	rel='stylesheet' type='text/css' />
+
+<link rel="shortcut icon" href="style/images/favicon.ico" />
+
+
+
+</head>
+
+<body>
+
+	<!-- TOP -->
+	<div class="top-bar">
+
+		<p class="text">
+			<a><i class="fa fa-map-marker"></i> 226, Lot Boumessmar Quartier
+				Mohammadi, Marrakech</a> <a href="tel:+61383766284"><i
+				class="fa fa-phone"></i> + 212 633 004 439</a>
+		</p>
+
+		<p class="social">
+			<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i
+				class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-vimeo"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a> <a href="#"><i
+				class="fa fa-skype"></i></a>
+		</p>
+
+	</div>
+	<!-- TOP -->
+
+	<!-- HEADER -->
+	<header class="clearfix">
+
+		<div class="logo">
+			<a href="#"><img src="style/images/logo.png" alt="HATA" />LocVoiture</a>
+		</div>
+
+		<nav class="navbar collapse" id="mobile-menu">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="services.html">Conditions de location</a></li>
+				<li><a href="services-single.html">Conditions de transfert</a></li>
+				<li><a href="contact.html">Contactez nous </a></li>
+			</ul>
+		</nav>
+
+
+
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+			data-target="#mobile-menu" aria-expanded="false">
+			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+				class="icon-bar"></span>
+		</button>
+
+	</header>
+	<!-- HEADER -->
+
+	<!-- SLIDER -->
+	<div class="flexslider" id="slider">
+		<ul class="slides">
+			<li><img src="style/images/voiture1.jpg" class="img-responsive"
+				alt="Slider Image" />
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="detail">
+								<div class="white">
+									<h2>
+										Mercedes<br />Benz Classe A
+									</h2>
+									<span class="slide-location">Guiliz, Marrakech</span>
+									<div class="bar"></div>
+									<span class="slide-price">1200 Dh</span>
+								</div>
+								<div class="red">
+									<span class="fa fa-group">&nbsp;&nbsp;3 Place</span> <span
+										class="fa fa-fire-extinguisher">&nbsp;&nbsp;Diesel</span> <span
+										class="fa fa-tachometer"> &nbsp;&nbsp; Sportive</span> <span
+										class="fa fa-hdd-o">&nbsp;&nbsp; Model 2017</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div></li>
+			<li><img src="style/images/voiture3.jpg" class="img-responsive"
+				alt="Slider Image" />
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="detail">
+								<div class="white">
+									<h2>
+										Mercedes<br />Benz Classe A
+									</h2>
+									<span class="slide-location">Guiliz, Marrakech</span>
+									<div class="bar"></div>
+									<span class="slide-price">1200 Dh</span>
+								</div>
+								<div class="red">
+									<span class="fa fa-group">&nbsp;&nbsp;3 Place</span> <span
+										class="fa fa-fire-extinguisher">&nbsp;&nbsp;Diesel</span> <span
+										class="fa fa-tachometer"> &nbsp;&nbsp; Sportive</span> <span
+										class="fa fa-hdd-o">&nbsp;&nbsp; Model 2017</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div></li>
+		</ul>
+	</div>
+	<!-- SLIDER -->
+
+	<!-- FILTER -->
+	<div class="container">
+		<div class="filter">
+			<form action="/front/chercher" method="POST" class="form-horizontal">
+				<!-- 			<select class="location" name="marque" th:value="${vehicule.marque}"> -->
+				<select class="location">
+					<option th:text="Marque"></option>
+					<option th:text="Audi">Audi</option>
+					<option th:text="Mercedes">Mercedes</option>
+					<option th:text="Fiat">Fiat</option>
+					<option th:text="Ford">Ford</option>
+					<option th:text="Jeep">Jeep</option>
+				</select>
+				<!-- 			<select class="cata" name="categorie" th:value="${vehicule.typeVehicule.categorie}"> -->
+				<select class="location">
+					<option th:text="Categorie">Categorie</option>
+					<option th:text="Mini citadine">Mini citadine</option>
+					<option th:text="Citadine Polyvalente">Citadine Polyvalente</option>
+					<option th:text="Voiture compacte">Voiture compacte</option>
+					<option th:text="Voiture familiale">Voiture familiale</option>
+					<option th:text="Routire de luxe">Routire de luxe</option>
+					<option th:text="Routiere de prestige">Routiere de prestige</option>
+					<option th:text="Coupé cabriolet">Coupé cabriolet</option>
+					<option th:text="Sportive">Sportive</option>
+					<option th:text="Hybrides">Hybrides</option>
+
+				</select>
+				<!-- 				<select class="type" name="couleur" th:value="${vehicule.couleur}"> -->
+				<select class="location">
+					<option th:text="Couleur">Couleur</option>
+					<option th:text="Bleu">Bleu</option>
+					<option th:text="Blanc">Blanc</option>
+					<option th:text="Jaune">Jaune</option>
+					<option th:text="Rouge">Rouge</option>
+					<option th:text="Orange">Orange</option>
+					<option th:text="Gris">Gris</option>
+					<option th:text="Noir">Noir</option>
+					<option th:text="Vert">Vert</option>
+
+				</select>
+
+				<button type="submit" class="btn">
+					<i class="fa fa-search"></i>Chercher
+				</button>
+
+				<div class="range">
+					<p>
+						<label for="price">Prix</label> <span>$ <input type="text"
+							id="price" /></span>
+					</p>
+					<div id="price-range"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- FILTER -->
+
+	<!-- ITEMS GRID -->
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-4 col-sm-6" th:each="v :${vehicules}">
+				<div class="item">
+					<div class="item-header clearfix">
+						<h3>
+							<a href="#" th:text="${v.marque}"></a>
+						</h3>
+						<span class="favorite"><i class="fa fa-heart"></i>9</span>
+					</div>
+					<figure>
+						<img th:src="'style/images/voiture'+${v.idVehicule}+'.jpg'" alt=""
+							class="img-responsive" />
+						<span class="label rent">New</span>
+						<div class="overlay">
+							<a href="#" class="btn btn-detail">Détail</a>
+						</div>
+					</figure>
+					<div class="item-detail">
+						<div class="left">
+
+							<span class="fa fa-tint" th:text="${v.typeVehicule.carburant}"></span>
+							<span class="garage" th:text="${v.typeVehicule.categorie}"></span>
+							<span class="fa fa-terminal" th:text="${v.km}">km</span>
+						</div>
+						<div class="right">
+							<span class="price" th:text="${v.prix}"><i
+								class="fa fa-money"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	<!-- ITEMS GRID -->
+
+	<!-- FACTS -->
+	<div class="facts_wrap animated">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="clearfix row">
+						<li class="counter col-md-3 col-sm-3">
+							<div>
+								<figure>
+									<img src="style/images/fact1.png" alt="" />
+								</figure>
+								<small>Voiture Sport</small> <span data-fact="3">0000</span>
+							</div>
+						</li>
+						<li class="counter col-md-3 col-sm-3">
+							<div>
+								<figure>
+									<img src="style/images/fact2.png" alt="" />
+								</figure>
+								<small>Voiture de Luxe</small> <span data-fact="5">0000</span>
+							</div>
+						</li>
+						<li class="counter col-md-3 col-sm-3">
+							<div>
+								<figure>
+									<img src="style/images/fact3.png" alt="" />
+								</figure>
+								<small>Coupé cabriolet</small> <span data-fact="10">0000</span>
+							</div>
+						</li>
+						<li class="counter col-md-3 col-sm-3">
+							<div>
+								<figure>
+									<img src="style/images/fact4.png" alt="" />
+								</figure>
+								<small>Voiture familiale</small> <span data-fact="6">000</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FACTS -->
+
+
+
+
+	<!-- BLOG -->
+	<div class="full-width home-posts blog-posts">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6">
+					<div class="post clearfix">
+						<figure>
+							<a href="#"><img src="style/images/hata.png" alt=""
+								class="img-responsive" /></a>
+						</figure>
+						<article>
+							<span class="date">08 June 2017</span>
+							<h3>
+								<a href="blog-post.html">It has nice clean design</a>
+							</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+								Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+								natoque penatibus et magnis nascetur ridiculus...</p>
+							<a href="#" class="cmmt">28</a>
+						</article>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="post clearfix">
+						<figure>
+							<a href="#"><img src="style/images/hata2.png" alt=""
+								class="img-responsive" /></a>
+						</figure>
+						<article>
+							<span class="date">01 Janvier 2018</span>
+							<h3>
+								<a href="blog-post.html">Experienced real estate brokers</a>
+							</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+								Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+								natoque penatibus et magnis nascetur ridiculus...</p>
+							<a href="#" class="cmmt">7</a>
+						</article>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- BLOG -->
+
+	<!-- BANNER -->
+	<div class="full-width personal-agent">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<figure>
+						<img src="style/images/agent-pic.png" alt="Pic"
+							class="img-responsive" />
+					</figure>
+				</div>
+				<div class="col-md-8 col-sm-8">
+					<article>
+						<span>LocVoiture</span>
+						<h2>Louer un véhicule d'exception chez nous</h2>
+						<p>Note site internet vous facilite la réservation du véhicule
+							qui vous convient avec un paiement sécurisé.</p>
+						<button type="button" class="btn btn-danger">Réserver</button>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- BANNER -->
+
+	<!-- REVIEWS -->
+	<div class="full-width rewiews">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<img src="style/images/avatar1.png" alt="Avatar"
+						class="img-responsive" />
+					<h6>Jane Ramos</h6>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+						penatibus et magnis dis parturient...</p>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<img src="style/images/avatar2.png" alt="Avatar"
+						class="img-responsive" />
+					<h6>Eva Rodriges</h6>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+						penatibus et magnis dis parturient...</p>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<img src="style/images/avatar3.png" alt="Avatar"
+						class="img-responsive" />
+					<h6>Paul Jones</h6>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+						penatibus et magnis dis parturient...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- REVIEWS -->
+
+	<!-- CALL2ACTION -->
+	<div class="full-width call-action">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<h4>Voulez vous louer une voiture? c'est chez nous!</h4>
+				</div>
+				<div class="col-md-3">
+					<a href="contact.html" class="btn btn-danger">Réserver</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- CALL2ACTION -->
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 copy-right">
+					<p>
+						<img src="style/images/footer-logo.png" alt="Logo"
+							class="img-responsive" /> &copy; 2018 DevTeam — LocVoiture
+						Agence de location de voiture
+					</p>
+				</div>
+				<div class="col-md-7">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">A propos</a></li>
+						<li><a href="#">Conditions de location</a></li>
+						<li><a href="#">Condition de transfert</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER -->
+
+	<script src="style/js/jquery-1.11.3.min.js"></script>
+	<script src="style/js/jquery-ui.js"></script>
+	<script src="style/js/bootstrap.min.js"></script>
+	<script src="style/js/masonry.pkgd.min.js"></script>
+	<script src="style/js/jquery.flexslider-min.js"></script>
+	<script src="style/js/jquery.selectBox.min.js"></script>
+	<script src="style/js/icheck.js"></script>
+	<script src="style/js/counter.animation.js"></script>
+	<script src="style/js/jquery.appear.js"></script>
+	<script src="style/js/custom.js"></script>
+	<script src="style/js/jquery.cycle2.js"></script>
+
+</body>
+
+<!-- Mirrored from pixarwpthemes.net/templates/hata/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 May 2016 10:11:53 GMT -->
+</html>
