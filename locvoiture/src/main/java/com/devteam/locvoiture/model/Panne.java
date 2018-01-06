@@ -28,7 +28,7 @@ public class Panne {
 	}
 	public void setIdPanne(int idPanne) {
 		this.idPanne = idPanne;
-	}
+	} 
 	public String getTypePanne() {
 		return typePanne;
 	}

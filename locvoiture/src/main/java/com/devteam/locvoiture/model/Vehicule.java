@@ -25,7 +25,7 @@ public class Vehicule {
 	public void setTypeVehicule(TypeVehicule typeVehicule) {
 		this.typeVehicule = typeVehicule;
 	}
-	public int getIdVehicule() {
+	public int getIdVehicule() { 
 		return idVehicule;
 	}
 	public void setIdVehicule(int idVehicule) {

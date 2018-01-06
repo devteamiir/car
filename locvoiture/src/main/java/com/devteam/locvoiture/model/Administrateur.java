@@ -1,4 +1,4 @@
-package com.devteam.locvoiture.model;
+ package com.devteam.locvoiture.model;
 
 import javax.persistence.Entity;
 
