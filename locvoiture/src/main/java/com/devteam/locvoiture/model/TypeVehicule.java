@@ -1,7 +1,13 @@
 package com.devteam.locvoiture.model;
 
-public class TypeVehicule {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class TypeVehicule {
+	@Id
+	@GeneratedValue
 	private int idTypeVehicule;
 	private String categorie;
 	private int nbrPlace;
