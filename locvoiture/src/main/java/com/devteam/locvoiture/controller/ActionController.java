@@ -56,7 +56,7 @@ public class ActionController {
 
 	}
 
-	// liste panne
+	// liste pannes
 
 	@RequestMapping(value = "/listePannes", method = RequestMethod.GET)
 
