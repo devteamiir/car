@@ -24,7 +24,7 @@ public class Reservation {
 	private Vehicule vehicule;
 	@OneToOne
 	private Facture facture;
-	  
+	   
 	public Facture getFacture() {
 		return facture;
 	}

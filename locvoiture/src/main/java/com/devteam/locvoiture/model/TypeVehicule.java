@@ -25,7 +25,7 @@ public class TypeVehicule {
 		this.categorie = categorie;
 	}
 	public int getNbrPlace() {
-		return nbrPlace;  
+		return nbrPlace;   
 	}
 	public void setNbrPlace(int nbrPlace) {
 		this.nbrPlace = nbrPlace;
