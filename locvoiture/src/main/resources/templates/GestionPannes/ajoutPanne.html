@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymleaf.org">
-<head>
-<meta charset="UTF-8"></meta>
-<title>Ajout Panne</title>
-</head>
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous"></link>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-
-<body>
+<head th:replace="admin/include/css :: css"></head>
 
 
-	<div class="container">
+<body class="skin-blue">
+	<!--   <div th:replace="admin/include/css::css"></div> -->
+	<div class="wrapper">
 
-		<h2 class="bg-primary text-white">Ajout Panne</h2>
+		<div th:replace="admin/include/header::header"></div>
+		<!-- Left side column. contains the logo and sidebar -->
 
-		<form action="ajoutPanne" method="post">
-			<div class="">
-				
-				<div>
-					<label for="typePanne">Type de Panne:</label><input type="text" name="typePanne" class="form-control"></input>
+		<div th:replace="admin/include/aside::aside"></div>
+
+		<!-- Right side column. Contains the navbar and content of the page -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+					Liste <small>pannes</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li class="active">Pannes</li>
+				</ol>
+			</section>
+
+			<!-- Main content -->
+			<section class="content">
+
+
+				<div class="container">
+					<h2 class="bg-primary text-white">Ajout Panne</h2>
+
+					<form action="ajoutPanne" method="post">
+						<div class="">
+
+							<div>
+								<label for="typePanne">Type de Panne:</label><input type="text"
+									name="typePanne" class="form-control"></input>
+							</div>
+							<div>
+								<label for="dateP">Date de Panne:</label><input type="date"
+									name="dateP" class="form-control"></input>
+							</div>
+							<div>
+								<label for="montant">Montant:</label><input type="number"
+									name="montant" class="form-control"></input>
+							</div>
+							<div>
+								<label for="description">Description:</label>
+								<textarea rows="4" cols="50" name="description"
+									class="form-control"></textarea>
+							</div>
+							<div>
+								<input type="submit" name="enregistrer" class="btn btn-default"></input>
+							</div>
+
+						</div>
+					</form>
 				</div>
-				<div>
-					<label for="dateP">Date de Panne:</label><input type="date" name="dateP" class="form-control"></input>
-				</div>
-				<div>
-					<label for="montant">Montant:</label><input type="number" name="montant" class="form-control"></input>
-				</div>
-				<div>
-					<label for="description">Description:</label><textarea rows="4" cols="50" name="description" class="form-control"></textarea>
-				</div>
-				<div>
-					<input type="submit" name="enregistrer" class="btn btn-default"></input>
-				</div>
-				
-			</div>
-		</form>
 
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+		<footer th:replace="admin/include/footer::footer"></footer>
 	</div>
+	<!-- ./wrapper -->
+	<footer th:replace="admin/include/js::js"></footer>
 </body>
 </html>
