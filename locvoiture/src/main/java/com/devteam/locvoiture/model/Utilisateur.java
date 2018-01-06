@@ -48,7 +48,7 @@ public String getAdresse() {
 }
 public void setAdresse(String adresse) {
 	this.adresse = adresse;
-}
+} 
 public String getTel() {
 	return tel;
 }
