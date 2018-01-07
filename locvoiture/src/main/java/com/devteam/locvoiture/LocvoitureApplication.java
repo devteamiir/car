@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LocvoitureApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(LocvoitureApplication.class, args);;
+		SpringApplication.run(LocvoitureApplication.class, args);
 	}
 }
