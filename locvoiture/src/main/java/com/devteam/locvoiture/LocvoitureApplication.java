@@ -8,5 +8,6 @@ public class LocvoitureApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(LocvoitureApplication.class, args);
+		//test
 	}
 }
